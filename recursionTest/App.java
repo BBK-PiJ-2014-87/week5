@@ -30,6 +30,14 @@ class Number {
 		
 	}
 	
+	public void printOdd(int n){
+		if (n>0){
+			System.out.println(n);
+			n = n - 2;
+			printOdd(n);
+		}
+	}
+	
 	
 	
 
@@ -42,6 +50,7 @@ public class App {
 		System.out.println(fact1.calculateFactorial(5));
 		System.out.println(fact1.calculateFib(6));
 		
+		fact1.printOdd(123);
 		//fact1.toInfinity(1);
 	}
 }
