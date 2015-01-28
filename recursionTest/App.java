@@ -21,6 +21,17 @@ class Number {
 		}
 	}
 	
+	/** Stack overflow test */
+	
+	public void toInfinity(int n){
+		int n2 = n+1;
+		System.out.println(n2);
+		toInfinity(n2);
+		
+	}
+	
+	
+	
 
 }
 
@@ -30,5 +41,7 @@ public class App {
 		
 		System.out.println(fact1.calculateFactorial(5));
 		System.out.println(fact1.calculateFib(6));
+		
+		//fact1.toInfinity(1);
 	}
 }
