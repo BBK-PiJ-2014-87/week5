@@ -38,6 +38,16 @@ class Number {
 		}
 	}
 	
+	public void printNumbers(int n){
+		if (n<=0){
+			return;
+		}
+		System.out.println(n);
+		printNumbers(n-2);
+		//printNumbers(n-3);
+		System.out.println(n);
+	}
+	
 	
 	
 
@@ -47,10 +57,12 @@ public class App {
 	public static void main(String[] args) {
 		Number fact1 = new Number();
 		
-		System.out.println(fact1.calculateFactorial(5));
-		System.out.println(fact1.calculateFib(6));
+//		System.out.println(fact1.calculateFactorial(5));
+//		System.out.println(fact1.calculateFib(6));
 		
-		fact1.printOdd(123);
-		//fact1.toInfinity(1);
+		fact1.printNumbers(6);
+		
+//		fact1.printOdd(123);
+//		fact1.toInfinity(1);
 	}
 }
