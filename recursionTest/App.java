@@ -1,14 +1,14 @@
 package recursionTest;
 
 class Factorial {
-	int num = 0;
+	
 
-	public int getFactorial(int n) {
+	public int calculateFactorial(int n) {
 		if (n == 1) {
 			return 1;
 		} else {
-			num = n * getFactorial(n - 1);
-			return num;
+			int result = n * calculateFactorial(n - 1);
+			return result;
 		}
 	}
 
@@ -18,6 +18,6 @@ public class App {
 	public static void main(String[] args) {
 		Factorial fact1 = new Factorial();
 		
-		System.out.println(fact1.getFactorial(5));
+		System.out.println(fact1.calculateFactorial(5));
 	}
 }
