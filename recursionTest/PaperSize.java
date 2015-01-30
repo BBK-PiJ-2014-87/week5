@@ -23,25 +23,39 @@ public class PaperSize {
 	private int convertInputToSteps(String word) {
 		int steps = 0;
 		if (word.charAt(1) == '0') {
-			word = word.substring(1, word.length());
-			// System.out.println(word);
+			word = word.substring(2, word.length());
+			System.out.println(word);
 			steps = word.length();
-			// System.out.println(steps);
+			System.out.println(steps);
 			return steps;
 
 		} else {
 			steps = Integer.parseInt(word.substring(1));
-			// System.out.println(steps);
+			System.out.println(steps);
 			return -steps;
 
 		}
+	}
+	
+	private String printString(int height, int width){
+		return "Paper size is " + height +"mm x " +width+"mm";
 	}
 
 	private String makeSmaller(int height, int width, int steps) {
 		if (steps < 0) {
 			return makeSmaller(width / 2, height, steps + 1);			
 		} else {			
-			return "height " + height +" width "+width;			
+			return printString(height, width);			
+		}
+	}
+	
+	private String makeBigger(int height, int width, int steps) {
+		if (steps > 0) {
+			
+			return makeBigger(width, height*2, steps - 1);			
+		} else {
+			System.out.println(height +" "+width);
+			return printString(height, width);			
 		}
 	}
 
@@ -50,10 +64,10 @@ public class PaperSize {
 		int height = 841;
 		if (steps < 0) {
 			System.out.println(makeSmaller(height, width,steps));
-		} else if (steps > 1) {
-			System.out.println("none");
+		} else if (steps > 0) {
+			System.out.println(makeBigger(height, width,steps));
 		} else {
-			System.out.println("none");
+			System.out.println(printString(height, width));
 		}
 	}
 
